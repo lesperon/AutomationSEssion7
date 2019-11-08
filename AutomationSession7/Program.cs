@@ -1,21 +1,33 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationSession7.BaseFiles;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AutomationSession7
 {
-    class Program
+    class Program : BaseTest
     {
         static void Main(string[] args)
         {
-            IWebDriver driver;
-            
-            Console.WriteLine("Hello World");
-            Console.ReadKey();
 
+          
+            SetUp();
+
+            FnSendKeyAndClear(By.Name("userName"), ConfigurationManager.AppSettings.Get("username"));
+            FnSendKeyAndClear(By.Name("password"), ConfigurationManager.AppSettings.Get("password"));
+
+            /*Xpath Version*/
+
+
+            driver.FindElement(By.Name("login")).Click();
+
+            AfterTest();
+           
+            Console.ReadKey();
            
         }
     }
