@@ -21,6 +21,9 @@ namespace AutomationSession7
             FnSendKeyAndClear(By.Name("password"), ConfigurationManager.AppSettings.Get("password"));
 
             /*Xpath Version*/
+            FnSendKeyAndClear(By.XPath("//*[@name='userName']"), ConfigurationManager.AppSettings.Get("username2"));
+            FnSendKeyAndClear(By.XPath("//*[@name='password']"), ConfigurationManager.AppSettings.Get("password2"));
+
 
 
             driver.FindElement(By.Name("login")).Click();
