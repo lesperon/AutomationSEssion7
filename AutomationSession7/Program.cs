@@ -28,9 +28,18 @@ namespace AutomationSession7
 
             driver.FindElement(By.Name("login")).Click();
 
-            AfterTest();
+            
+            IList<IWebElement> ElementList = driver.FindElements(By.XPath("//a"));
+            foreach (IWebElement el in ElementList)
+            {
+
+                el.GetAttribute("href");
+            }
+            
+            
+            //AfterTest();
+
            
-            Console.ReadKey();
            
         }
     }

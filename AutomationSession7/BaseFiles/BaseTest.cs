@@ -38,7 +38,7 @@ namespace AutomationSession7.BaseFiles
 
         }
 
-        /*Close the browser and Quit*/
+        /*Close the browser and Quit the selenium instance*/
         public static void AfterTest()
         {
 
