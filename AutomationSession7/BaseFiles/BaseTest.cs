@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace AutomationSession7.BaseFiles
         private static string strBrowserName = ConfigurationManager.AppSettings.Get("url");
 
         //METHODS
+
+        [SetUp]
         /*Initialize the driver and indicates the url*/
         public static void SetUp()
         {
@@ -38,6 +41,7 @@ namespace AutomationSession7.BaseFiles
 
         }
 
+        [TearDown]
         /*Close the browser and Quit the selenium instance*/
         public static void AfterTest()
         {
